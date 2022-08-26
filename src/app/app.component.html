@@ -4,10 +4,15 @@
             <span class="fs-4">Simple header</span>
         </a>
         <nav>
-            <a *ngIf="!this.storage.isLoggedIn()" class="p-2 text-dark text-decoration-none" routerLinkActive="active" routerLink="/login">Login</a>
-            <a *ngIf="!this.storage.isLoggedIn()" class="p-2 text-dark text-decoration-none" routerLinkActive="active" routerLink="/signup">Register</a>
-            <a *ngIf="this.storage.isLoggedIn()"  class="p-2 text-dark text-decoration-none" routerLinkActive="active">{{this.storage.getUser().name}}</a>
-            <a *ngIf="this.storage.isLoggedIn()"  class="p-2 text-dark text-decoration-none" routerLinkActive="active" (click)="logout()" type="button">Logout</a>
+            <div id="dv-unauthorized" *ngIf="!this.storage.isLoggedIn()">
+                <a class="p-2 text-dark text-decoration-none" routerLinkActive="active" routerLink="/login">Login</a>
+                <a class="p-2 text-dark text-decoration-none" routerLinkActive="active" routerLink="/signup">Register</a>
+            </div>
+            <div id="dv-authorized" *ngIf="this.storage.isLoggedIn()">
+                <a class="p-2 text-dark text-decoration-none" routerLinkActive="active">{{ this.storage.getUser().name | uppercase }}</a>
+                <a class="p-2 text-dark text-decoration-none" routerLinkActive="active" routerLink="/accounts">Accounts</a>
+                <a class="p-2 text-dark text-decoration-none" routerLinkActive="active" (click)="logout()" type="button">Logout</a>
+            </div>
         </nav>
        
         

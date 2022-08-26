@@ -8,7 +8,7 @@ import { TokenStorageService } from './services/token-storage.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'FinanceTracker';
+  title = 'Finance Tracker';
   
   constructor(public storage:TokenStorageService, private router:Router) {
      

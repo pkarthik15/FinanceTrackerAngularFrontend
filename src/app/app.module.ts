@@ -9,7 +9,10 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import {authInterceptorProviders} from './helpers/auth-http.interceptor'
+import {authInterceptorProviders} from './helpers/auth-http.interceptor';
+import { AccountsComponent } from './components/accounts/accounts.component';
+import { CreateAccountComponent } from './components/create-account/create-account.component';
+import { AccountItemComponent } from './components/account-item/account-item.component'
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import {authInterceptorProviders} from './helpers/auth-http.interceptor'
     LoginComponent,
     SignupComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    AccountsComponent,
+    CreateAccountComponent,
+    AccountItemComponent
   ],
   imports: [
     BrowserModule,
