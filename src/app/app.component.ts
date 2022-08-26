@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TokenStorageService } from './services/token-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'FinanceTracker';
+  
+  constructor(public storage:TokenStorageService, private router:Router) {
+     
+  }
+
+   
+
+  logout() {
+      this.storage.clean()
+      this.router.navigate(['login'])
+  }
+
 }
