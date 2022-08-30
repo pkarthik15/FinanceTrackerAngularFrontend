@@ -1,5 +1,5 @@
 import { AccountModel } from "./account";
 
-export interface AccountRead extends AccountModel {
-    id:string
+export class AccountRead extends AccountModel {
+    _id:string;
 }

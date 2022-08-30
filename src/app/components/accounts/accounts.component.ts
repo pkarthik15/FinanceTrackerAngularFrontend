@@ -17,14 +17,12 @@ export class AccountsComponent implements OnInit {
 
   ngOnInit(): void {
       this.accountService.getAccounts().subscribe({
-        
-        next: (data:AccountRead[]) => {
+        next: (data: AccountRead[] ) => {
           this.acountRecords = data;
         },
         error: err => {
           this.errorMessage = err.error.error;
         }
-
       });
   }
 
@@ -32,7 +30,7 @@ export class AccountsComponent implements OnInit {
     this.accountService
       .deleteAccount(account)
       .subscribe(
-        () => (this.acountRecords = this.acountRecords.filter((t) => t.id !== account.id))
+        () => (this.acountRecords = this.acountRecords.filter((t) => t._id !== account._id))
       );
   }
 

@@ -23,33 +23,30 @@ export class AccountService {
 
   constructor(private http:HttpClient) { }
 
-  getAccounts(): Observable<any> {
-    return this.http.get(
-      account_url    
-    );
+  getAccounts(): Observable<AccountRead[]> {
+    return this.http.get<AccountRead[]>(account_url);
   }
 
-  createAccount(req:AccountModel): Observable<any> {
-    return this.http.post(
+  createAccount(req:AccountModel): Observable<AccountRead> {
+    return this.http.post<AccountRead>(
       account_url,
       JSON.stringify(req),
       httpHeaderOptions
     );
   }
 
-
-  updateAccount(req:AccountRead): Observable<any>{
-    return this.http.patch(
-      account_url + "/" + req.id,
+  updateAccount(req:AccountRead): Observable<AccountRead>{
+    return this.http.patch<AccountRead>(
+      account_url + "/" + req._id,
       JSON.stringify({name:req.name}),
       httpHeaderOptions
     );
   }
 
-
-  deleteAccount(req:AccountRead): Observable<any>{
-    return this.http.delete(
-      account_url + "/" + req.id
+  deleteAccount(req:AccountRead): Observable<AccountRead>{
+    console.log(req);
+    return this.http.delete<AccountRead>(
+      account_url + "/" + req._id
     );
   }
 

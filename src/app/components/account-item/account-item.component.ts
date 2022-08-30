@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AccountRead  } from '../../models/accountRead';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-account-item',
@@ -10,6 +11,7 @@ export class AccountItemComponent implements OnInit {
 
   @Input() account: AccountRead;
   @Output() onDeleteTask: EventEmitter<AccountRead> = new EventEmitter();
+  faTrash = faTrash;
 
   constructor() { }
 

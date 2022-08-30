@@ -1,3 +1,3 @@
-export interface AccountModel {
-    name:string
+export class AccountModel {
+    name:string;
 }

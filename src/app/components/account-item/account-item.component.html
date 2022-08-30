@@ -1,1 +1,4 @@
-<p>account-item works!</p>
+<div class="d-flex m-4 p-2 shadow justify-content-between">
+    <h4>{{account.name}}</h4>
+    <fa-icon [icon]="faTrash" color="Red" [ngStyle]="{ color: 'red', cursor:'pointer' }" (click)="onDelete(account)"></fa-icon>
+</div>
